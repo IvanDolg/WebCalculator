@@ -16,7 +16,7 @@ public class RegistrationServlet extends HttpServlet {
     private final UserDataValidation validation = new UserDataValidation();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        getServletContext().getRequestDispatcher("/pages/reg.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/pages/reg.jsp").forward(req, resp);
     }
 
     @Override
@@ -24,9 +24,10 @@ public class RegistrationServlet extends HttpServlet {
         String name = req.getParameter("name");
         String userName = req.getParameter("userName");
         String password = req.getParameter("password");
+        String role = req.getParameter("role");
 
         if (validation.nameValidation(name) && validation.passwordValidation(password)){
-            userService.create(name, userName, password);
+            userService.create(name, userName, password, role);
             resp.sendRedirect("/");
         } else {
             resp.getWriter().println("Incorrect data ...");

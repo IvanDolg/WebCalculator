@@ -7,8 +7,8 @@ import java.util.Optional;
 public class UserService {
     private final JDBCUserStorage userStorage = new JDBCUserStorage();
 
-    public void create(String name, String userName, String password){
-        User user = new User(name, userName, password);
+    public void create(String name, String userName, String password, String role){
+        User user = new User(name, userName, password, role);
         userStorage.save(user);
     }
 

@@ -18,7 +18,7 @@
         <form class="mt-5 w-25" action="/login" method="post">
             <div class="mb-3">
                 <label for="exampleInputEmail2" class="form-label">Username</label>
-                <input type="text" name="username" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp2">
+                <input type="text" name="userName" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp2">
                 <div id="emailHelp2" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
@@ -29,7 +29,6 @@
             <c:if test="${message != null}">
                 <div class="alert alert-warning mt-5" role="alert">
                         ${message}
-                        <%--                    <c:redirect url="/"/>--%>
                 </div>
             </c:if>
         </form>
@@ -37,3 +36,4 @@
 </div>
 </body>
 </html>
+

@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
     private final UserDataValidation validation = new UserDataValidation();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-      getServletContext().getRequestDispatcher("pages/login.jsp").forward(req,resp);
+      getServletContext().getRequestDispatcher("/pages/login.jsp").forward(req,resp);
     }
 
     @Override
