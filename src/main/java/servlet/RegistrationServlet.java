@@ -3,6 +3,7 @@ package servlet;
 import services.UserService;
 import validation.UserDataValidation;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,12 @@ public class RegistrationServlet extends HttpServlet {
     private final UserService userService = new UserService();
     private final UserDataValidation validation = new UserDataValidation();
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        getServletContext().getRequestDispatcher("/pages/reg.jsp").forward(req,resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         String userName = req.getParameter("userName");
         String password = req.getParameter("password");
